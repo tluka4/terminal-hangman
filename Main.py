@@ -1,4 +1,7 @@
 import getpass
+
+guessList = []
+
 def printAccording(input):
     if miss == 0:
         print("""
@@ -45,6 +48,7 @@ def printAccording(input):
                     |
                 =========  
         """)
+
     elif miss == 4:
          print("""
             --------
@@ -55,6 +59,7 @@ def printAccording(input):
             |
          =========  
  """)
+         
     elif miss == 5:
          print("""
             --------
@@ -65,6 +70,7 @@ def printAccording(input):
             |
          =========  
  """)
+         
     elif miss == 6:
          print("""
             --------
@@ -76,17 +82,12 @@ def printAccording(input):
          =========  
  """)
 
-
-
-
-
-
-
-
-
-
-
-
+def printGuessed(guessedLetter):
+    if guessedLetter not in guessList:
+        guessList.append(guessedLetter)
+    print("Guessed Letters:")
+    print(", ".join(guessList))
+    
 
 print("Player 1 please input a word.")
 
@@ -126,8 +127,7 @@ while curr_counter < 7:
         miss += 1
 
     printAccording(miss)
-
-    print
+    printGuessed(player2_letter)
 
     print(''.join(underline))
     curr_counter += 1
