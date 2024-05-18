@@ -1,4 +1,92 @@
 import getpass
+def printAccording(input):
+    if miss == 0:
+        print("""
+           --------
+           |      
+           |      
+           |      
+           |      
+           |
+        =========  
+""")
+
+
+    elif miss == 1:
+        print("""
+            --------
+            |      ( )
+            |      
+            |      
+            |      
+            |
+         =========  
+ """)
+
+    elif miss == 2:
+
+     print("""
+                --------
+                |      ( )
+                |       |
+                |       
+                |      
+                |
+             =========  
+     """)
+
+    elif miss == 3:
+        print("""
+                    --------
+                    |      ( )
+                    |      /|
+                    |       
+                    |      
+                    |
+                =========  
+        """)
+    elif miss == 4:
+         print("""
+            --------
+            |      ( )
+            |      /|\\
+            |      
+            |      
+            |
+         =========  
+ """)
+    elif miss == 5:
+         print("""
+            --------
+            |      ( )
+            |      /|\\
+            |       /
+            |      
+            |
+         =========  
+ """)
+    elif miss == 6:
+         print("""
+            --------
+            |      ( )
+            |      /|\\
+            |       /\\
+            |      
+            |
+         =========  
+ """)
+
+
+
+
+
+
+
+
+
+
+
+
 
 print("Player 1 please input a word.")
 
@@ -22,6 +110,8 @@ print("Your word is: ")
 print(''.join(underline))
 
 curr_counter = 0
+miss = 0
+
 
 while curr_counter < 7:
     print("Player 2 guess a letter.")
@@ -31,94 +121,15 @@ while curr_counter < 7:
         for index,l in enumerate(wordtrack):
             if player2_letter == l:
                 underline[index] = l
+
+    else: 
+        miss += 1
+
+    printAccording(miss)
+
+    print
+
     print(''.join(underline))
     curr_counter += 1
 
-
-
-
-
-=======
-print("""
-           --------
-           |      
-           |      
-           |      
-           |      
-           |
-        =========  
-""")
-
-
-# print("""
-#            --------
-#            |      
-#            |      
-#            |      
-#            |      
-#            |
-#         =========  
-# """)
-
-# print("""
-#            --------
-#            |      ( )
-#            |      
-#            |      
-#            |      
-#            |
-#         =========  
-# """)
-# print("""
-#            --------
-#            |      ( )
-#            |       |
-#            |       
-#            |      
-#            |
-#         =========  
-# """)
-
-# print("""
-#            --------
-#            |      ( )
-#            |      /|
-#            |       
-#            |      
-#            |
-#         =========  
-# """)
-
-# print("""
-#            --------
-#            |      ( )
-#            |      /|\\
-#            |      
-#            |      
-#            |
-#         =========  
-# """)
-
-# print("""
-#            --------
-#            |      ( )
-#            |      /|\\
-#            |       /
-#            |      
-#            |
-#         =========  
-# """)
-
-# print("""
-#            --------
-#            |      ( )
-#            |      /|\\
-#            |       /\\
-#            |      
-#            |
-#         =========  
-# """)
-
-
-player1_word = input("Here: ")
 
