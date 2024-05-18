@@ -80,14 +80,6 @@ def printAccording(input):
 
 
 
-
-
-
-
-
-
-
-
 print("Player 1 please input a word.")
 
 
@@ -111,25 +103,40 @@ print(''.join(underline))
 
 curr_counter = 0
 miss = 0
+flip = 2
 
 
 while curr_counter < 7:
     print("Player 2 guess a letter.")
     player2_letter = input("Input Letter: ")
 
+
     if player2_letter in wordtrack:
         for index,l in enumerate(wordtrack):
             if player2_letter == l:
                 underline[index] = l
+            if underline == wordtrack:
+                flip = 1
+                break 
 
     else: 
         miss += 1
+        if miss == 6:
+            flip = 0
+
 
     printAccording(miss)
-
-    print
 
     print(''.join(underline))
     curr_counter += 1
 
+    if flip == 0 or flip == 1:
+        break
 
+
+if flip == 0:
+    print("Player 2 did not guess the word!")
+    print("The correct word was: " + str(''.join(wordtrack)) + "!")
+
+elif flip == 1:
+    print("Player 2 guessed the word correctly!")
