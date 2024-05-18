@@ -4,9 +4,13 @@ player1_word = input("Here: ")
 
 underline = []
 
-for i in range(player1_word):
+for i in player1_word:
+    if i == " ":
+        underline.append(" ")
+        continue
+
     underline.append("_")
 
 
 print("Your word is ")
-print(save)
+print(''.join(underline))
