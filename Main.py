@@ -2,9 +2,11 @@ print("Player 1 please input a word.")
 
 player1_word = input("Here: ")
 
-for i in player1_word:
-    if i == " ":
-        
+underline = []
+
+for i in range(player1_word):
+    underline.append("_")
 
 
 print("Your word is ")
+print(save)
