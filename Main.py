@@ -1,0 +1,1 @@
+print("Player 1 please input a word.")
